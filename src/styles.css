@@ -1,0 +1,787 @@
+/* ============================
+   TIPOGRAFÍA Y RESET
+============================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #111111;
+  line-height: 1.6;
+}
+
+/* ============================
+   PALETA
+============================ */
+
+:root {
+  --negro: #111111;
+  --rosa: #ff4fa3;
+  --gris: #f5f5f5;
+  --blanco: #ffffff;
+}
+
+/* ============================
+   LOGO
+============================ */
+
+.logo-img {
+  height: 45px;
+}
+
+/* ============================
+   NAVBAR
+============================ */
+
+.navbar {
+  width: 100%;
+  background: var(--negro);
+  padding: 25px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  height: 45px;
+  transition: height 0.3s ease;
+}
+
+.nav-links a {
+  color: var(--blanco);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--rosa);
+}
+
+/* NAVBAR REDUCIDA */
+.navbar.shrink {
+  padding: 12px 0;
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.navbar.shrink .logo-img {
+  height: 32px;
+}
+
+/* HAMBURGUESA */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #eaeaea;
+  transition: 0.3s;
+} /* Animación hamburguesa → X */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+} /* RESPONSIVE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: rgb(31, 31, 31);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
+/* ============================
+   HERO
+============================ */
+
+.hero {
+  height: 90vh;
+  background: var(--negro);
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  padding-top: 120px;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 30px;
+  background: var(--rosa);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #d93c8a;
+}
+
+/* ============================
+   SECCIONES GENERALES
+============================ */
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ============================
+   SERVICIOS
+============================ */
+
+.servicios {
+  padding: 100px 20px;
+  background: var(--gris);
+}
+
+.servicios-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.servicio-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ============================
+   PORTFOLIO REAL
+============================ */
+
+.portfolio {
+  padding: 100px 20px;
+}
+
+.portfolio-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.portfolio-info {
+  padding: 20px;
+}
+
+.portfolio-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.portfolio-info p {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+/* ============================
+   SOBRE MI
+============================ */
+
+.sobre-mi {
+  padding: 100px 20px;
+  background: var(--gris);
+}
+
+.sobre-texto {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* ============================
+   CONTACTO
+============================ */
+
+.contacto {
+  padding: 100px 20px;
+}
+
+.contacto-grid {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.contacto-card {
+  background: var(--rosa);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contacto-card:hover {
+  background: #d93c8a;
+}
+
+/* ============================
+   FOOTER PROFESIONAL
+============================ */
+
+.footer {
+  background: #111111;
+  color: white;
+  padding: 60px 20px 30px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--rosa);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--rosa);
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 14px;
+  opacity: 0.7;
+  max-width: 200px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* ============================
+   Fade-in
+============================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   BOTÓN FLOTANTE WHATSAPP
+============================ */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.wp-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ============================
+   SERVICIOS DETALLADOS
+============================ */
+
+.servicios-detallados {
+  padding: 100px 20px;
+  background: #f5f5f5;
+}
+
+.servicios-detallados-header {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.servicios-detallados-header p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Paquetes */
+
+.paquetes-grid {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.paquete-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px 25px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paquete-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.paquete-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.paquete-precio {
+  font-weight: 700;
+  color: var(--rosa);
+  margin-bottom: 8px;
+}
+
+.paquete-ideal {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.paquete-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.paquete-lista li {
+  margin-bottom: 6px;
+}
+
+/* Proceso */
+
+.proceso {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.proceso h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.proceso-pasos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.proceso-paso {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.proceso-numero {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: var(--rosa);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* FAQ */
+
+.faq {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.faq h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item h4 {
+  margin-bottom: 8px;
+}
+
+/* CTA final */
+
+.servicios-cta {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px 0;
+}
+
+.servicios-cta h3 {
+  margin-bottom: 10px;
+}
+
+.servicios-cta p {
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+.paquete-btn {
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ============================
+   FORMULARIO PDL PREMIUM
+============================ */
+
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Caja principal */
+.form-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 480px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #111111;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--rosa);
+}
+
+/* Títulos */
+.form-box h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--negro);
+}
+
+.form-box p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Inputs */
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+  border-color: var(--rosa);
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 79, 163, 0.15);
+}
+
+/* Textarea */
+.form-box textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botón enviar */
+.btn-enviar {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--rosa);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+
+.btn-enviar:hover {
+  background: #e04492;
+  transform: translateY(-2px);
+}
+
+/* Overlay */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Caja */
+.success-box {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  animation: popIn 0.35s ease-out;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación */
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Icono */
+.success-icon {
+  font-size: 3rem;
+  color: var(--rosa);
+  margin-bottom: 1rem;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* Botón */
+.btn-success-close {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--rosa);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-success-close:hover {
+  background: #e04492;
+  transform: translateY(-2px);
+}
