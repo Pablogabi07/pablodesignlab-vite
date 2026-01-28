@@ -7,7 +7,7 @@ export default function ServiciosDetallados() {
 
   const paquetes = [
     {
-      nombre: "Landing Page Profesional",
+      nombre: "Landing Page Profesional.",
       ideal: "Ideal para emprendedores, marcas personales y negocios pequeños.",
       incluye: [
         "Diseño moderno y responsive",
@@ -16,11 +16,11 @@ export default function ServiciosDetallados() {
         "Integración con WhatsApp",
         "Animaciones suaves",
         "Optimización básica SEO",
-        "Entrega en 5–7 días",
+        /*"Entrega en 5–7 días",*/
       ],
     },
     {
-      nombre: "Sitio Web Completo (3–5 páginas)",
+      nombre: "Sitio Web Completo (3–5 páginas).",
       ideal: "Perfecto para negocios que necesitan presencia sólida.",
       incluye: [
         "Diseño personalizado",
@@ -30,11 +30,11 @@ export default function ServiciosDetallados() {
         "Optimización SEO inicial",
         "Integración con redes sociales",
         "Hosting + dominio (opcional)",
-        "Entrega en 10–15 días",
+        /*"Entrega en 10–15 días",*/
       ],
     },
     {
-      nombre: "Tienda Online / E‑commerce",
+      nombre: "Tienda Online / E‑commerce.",
       ideal: "Para marcas que quieren vender online de forma profesional.",
       incluye: [
         "Catálogo de productos",
@@ -44,7 +44,7 @@ export default function ServiciosDetallados() {
         "SEO para productos",
         "Integración con WhatsApp",
         "Capacitación para usar la tienda",
-        "Entrega en 15–20 días",
+        /*"Entrega en 15–20 días",*/
       ],
     },
   ];
