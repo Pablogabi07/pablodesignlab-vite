@@ -5,7 +5,7 @@ import proyecto3 from "../assets/almasimparables.png";
 export default function Portfolio() {
   const proyectos = [
     {
-      titulo: "GlowyAmila",
+      titulo: "GlowYamila",
       descripcion: "E‑commerce de cosmética con carrito y diseño responsive.",
       img: proyecto1,
       link: "https://glowyamila-frontend-fs23.vercel.app/",
