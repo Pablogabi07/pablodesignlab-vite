@@ -1,7 +1,7 @@
 import logo from "../assets/logo.png";
 import useNavbarShrink from "../hooks/useNavbarShrink";
 import { useState } from "react";
-import NubiLogo from "../assets/nubisaludando.png";
+import NubiLogo from "../assets/Nubisaludando.png";
 import "./Navbar.css";
 
 export default function Navbar() {
