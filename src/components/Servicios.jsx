@@ -1,5 +1,6 @@
 import useFadeIn from "../hooks/useFadeIn";
 
+
 export default function Servicios() {
   const [ref, visible] = useFadeIn();
 
@@ -8,8 +9,10 @@ export default function Servicios() {
       id="servicios"
       ref={ref}
       className={`servicios fade-in ${visible ? "visible" : ""}`}
+      style={{ position: "relative" }} // Necesario para posicionar a Nubi dentro de la sección
     >
       <h2 className="section-title">Servicios</h2>
+
 
       <div className="servicios-grid">
         <div className="servicio-card">

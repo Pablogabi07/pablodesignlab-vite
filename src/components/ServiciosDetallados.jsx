@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Formulario from "./Formulario";
 
+
 export default function ServiciosDetallados() {
   const [showForm, setShowForm] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
+  
   const paquetes = [
     {
       nombre: "Landing Page Profesional.",
@@ -58,6 +60,8 @@ export default function ServiciosDetallados() {
           resultados reales para tu marca.
         </p>
       </div>
+
+            
 
       <div className="paquetes-grid">
         {paquetes.map((p, i) => (

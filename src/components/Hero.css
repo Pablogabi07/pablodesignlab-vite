@@ -1,0 +1,38 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px; /* espacio entre texto e imagen */
+}
+
+/* Contenido textual */
+.hero-content {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Imagen de Nubi */
+.nubi-hero {
+  flex-shrink: 0;
+}
+
+.nubi-hero img {
+  width: 80px; /* ajustá según lo que se vea bien */
+  height: auto;
+  animation: slideIn 1s ease-out;
+}
+
+/* Animación */
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

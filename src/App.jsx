@@ -5,8 +5,8 @@ import Portfolio from "./components/Portfolio";
 import SobreMi from "./components/SobreMi";
 import Contacto from "./components/Contacto";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
 import ServiciosDetallados from "./components/ServiciosDetallados";
+import NubiWhatsAppButton from "./components/NubiWhatsAppButton";
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
       <SobreMi />
       <Contacto />
       <Footer />
-      <WhatsAppButton />
+      <NubiWhatsAppButton/>
     </>
   );
 }

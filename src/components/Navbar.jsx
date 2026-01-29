@@ -1,6 +1,8 @@
 import logo from "../assets/logo.png";
 import useNavbarShrink from "../hooks/useNavbarShrink";
 import { useState } from "react";
+import NubiLogo from "../assets/nubisaludando.png";
+import "./Navbar.css";
 
 export default function Navbar() {
   const shrink = useNavbarShrink();
@@ -9,6 +11,11 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${shrink ? "shrink" : ""}`}>
       <div className="navbar-container">
+        
+        {/* Imagen de nubi */}
+        <h1 className="site-title">
+          <img src={NubiLogo} alt="Logo Nubi" className="nubi-logo" />
+        </h1>
         <img src={logo} alt="Pablo Design Lab" className="logo-img" />
 
         {/* Botón hamburguesa */}

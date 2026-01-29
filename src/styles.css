@@ -46,12 +46,12 @@ body {
   padding: 25px 0;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 10; /* antes 1000 */
   transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
   padding: 0 20px;
   display: flex;
@@ -60,13 +60,13 @@ body {
 }
 
 .logo-img {
-  height: 45px;
+  height: 40px;
   transition: height 0.3s ease;
 }
 
 .nav-links a {
   color: var(--blanco);
-  margin-left: 20px;
+  margin-left: 30px;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -137,28 +137,38 @@ body {
 ============================ */
 
 .hero {
-  height: 90vh;
+  min-height: 100vh; /* asegura que ocupe toda la pantalla */
   background: var(--negro);
   color: var(--blanco);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 120px 20px 100px; /* más espacio arriba y abajo */
   text-align: center;
-  padding-top: 120px;
+  box-sizing: border-box;
 }
 
+/* Contenedor del contenido */
+.hero-content {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Título */
 .hero-content h2 {
   font-size: 48px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
+/* Subtítulo */
 .hero-content p {
   margin-top: 15px;
   font-size: 20px;
   opacity: 0.8;
 }
 
+/* Botón */
 .btn-primary {
   display: inline-block;
   margin-top: 30px;
@@ -174,6 +184,49 @@ body {
 .btn-primary:hover {
   background: #d93c8a;
 }
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 140px 20px 120px; /* más aire en mobile */
+  }
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .btn-primary {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 160px 20px 140px;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    padding: 8px 24px;
+    font-size: 15px;
+  }
+}
+
 
 /* ============================
    SECCIONES GENERALES
@@ -292,9 +345,24 @@ body {
 ============================ */
 
 .contacto {
-  padding: 100px 20px;
+  padding: 120px 20px 100px;
+  text-align: center;
+  position: relative;
 }
 
+/* Contenedor para Nubi */
+.nubi-contacto-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.nubi-contacto {
+  width: 200px;
+  height: auto;
+}
+
+/* Grid de enlaces */
 .contacto-grid {
   max-width: 800px;
   margin: auto;
@@ -316,6 +384,31 @@ body {
 
 .contacto-card:hover {
   background: #d93c8a;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media (max-width: 768px) {
+  .nubi-contacto {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .contacto {
+    padding: 140px 20px 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nubi-contacto {
+    width: 150px;
+  }
+
+  .contacto {
+    padding: 160px 20px 140px;
+  }
 }
 
 /* ============================
@@ -608,6 +701,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* evita que el formulario toque los bordes en mobile */
   z-index: 999;
 }
 
@@ -616,13 +710,115 @@ body {
   background: #ffffff;
   padding: 2.5rem;
   border-radius: 14px;
-  width: 90%;
+  width: 100%;
   max-width: 480px;
   font-family: "Poppins", sans-serif;
   position: relative;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.25s ease-out;
+  box-sizing: border-box;
 }
+
+/* Inputs */
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-box textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botón enviar */
+.btn-enviar {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--rosa);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background: #d93c8a;
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .form-box {
+    padding: 2rem;
+    max-width: 420px;
+  }
+
+  .form-box input,
+  .form-box textarea {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .btn-enviar {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .form-box {
+    padding: 1.6rem;
+    max-width: 360px;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+  }
+
+  .form-box p {
+    font-size: 14px;
+  }
+
+  .form-box input,
+  .form-box textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-enviar {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .close-btn {
+    font-size: 20px;
+  }
+}
+
 
 /* Animación suave */
 @keyframes fadeIn {
@@ -652,6 +848,13 @@ body {
 .close-btn:hover {
   color: var(--rosa);
 }
+
+
+
+
+
+
+
 
 /* Títulos */
 .form-box h2 {

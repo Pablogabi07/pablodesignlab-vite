@@ -1,0 +1,37 @@
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem; /* escala mejor que px */
+  font-weight: bold;
+  color: white;
+}
+
+/* Logo base */
+.nubi-logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .nubi-logo {
+    width: 60px;
+  }
+
+  .site-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 480px) {
+  .nubi-logo {
+    width: 45px;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+}
+
