@@ -1,5 +1,6 @@
 import { useState } from "react";
-import NubiCara from "../assets/Nubicara.png";
+import NubiCara from "../assets/Nubicara2.png";
+
 
 import "./NubiWhatsAppButton.css";
 
