@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NubiIdea from "../assets/Nubicara.png";
+import NubiIdea from "../assets/Nubicara.png"; /*Imagen*/
 import "./NubiWhatsAppButton.css";
 
 export default function NubiWhatsAppButton() {
