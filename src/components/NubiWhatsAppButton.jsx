@@ -26,7 +26,7 @@ export default function NubiWhatsAppButton() {
           transform: show ? "translateY(0)" : "translateY(10px)",
         }}
       >
-        Mandame tu consulta
+        Te ayudo?
       </div>
 
       <img src={NubiCara} alt="Nubi WhatsApp" className="nubi-whatsapp-img" />
