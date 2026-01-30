@@ -51,6 +51,19 @@ export default function ServiciosDetallados() {
     <section id="servicios-detallados" className="servicios-detallados">
       <div className="servicios-detallados-header">
         <h2 className="section-title">Servicios y paquetes</h2>
+
+        {/* Texto SEO */}
+        <p className="seo-texto">
+          En Pablo Design Lab ofrezco tres paquetes de diseño web pensados para
+          distintos niveles de necesidad y crecimiento. Desde una landing page
+          profesional para emprendedores, hasta sitios completos y tiendas
+          online con catálogo, carrito y panel de administración. Todos los
+          diseños son responsive, optimizados para SEO y listos para integrarse
+          con WhatsApp, redes sociales y formularios reales. Elegí el paquete
+          que mejor se adapta a tu proyecto y empezá a construir tu presencia
+          digital con nosotros.
+        </p>
+
         <p>
           Trabajo con pocos proyectos a la vez para asegurar calidad, claridad y
           resultados reales para tu marca.
@@ -72,7 +85,6 @@ export default function ServiciosDetallados() {
             <button
               className="btn-primary paquete-btn"
               onClick={() => {
-                // Evento GA4
                 sendEvent("click_formulario_paquete", {
                   paquete: p.nombre,
                   origen: "seccion_servicios",
@@ -99,7 +111,6 @@ export default function ServiciosDetallados() {
         <button
           className="btn-primary"
           onClick={() => {
-            // Evento GA4 CTA general
             sendEvent("click_formulario_paquete", {
               paquete: "Consulta general",
               origen: "cta_final_servicios",

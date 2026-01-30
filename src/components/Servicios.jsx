@@ -1,6 +1,5 @@
 import useFadeIn from "../hooks/useFadeIn";
 
-
 export default function Servicios() {
   const [ref, visible] = useFadeIn();
 
@@ -9,10 +8,20 @@ export default function Servicios() {
       id="servicios"
       ref={ref}
       className={`servicios fade-in ${visible ? "visible" : ""}`}
-      style={{ position: "relative" }} // Necesario para posicionar a Nubi dentro de la sección
+      style={{ position: "relative" }}
     >
       <h2 className="section-title">Servicios</h2>
 
+      {/* Texto SEO */}
+      <p className="seo-texto">
+        En Pablo Design Lab ofrezco soluciones de diseño web pensadas para
+        emprendedores, marcas personales y negocios que buscan una presencia
+        digital sólida. Creo landing pages, sitios completos y tiendas online
+        con diseño moderno, responsive y optimizado para generar resultados
+        reales. Cada proyecto se adapta a tus objetivos, con identidad visual
+        profesional, experiencia de usuario fluida y compatibilidad total con
+        dispositivos móviles.
+      </p>
 
       <div className="servicios-grid">
         <div className="servicio-card">
