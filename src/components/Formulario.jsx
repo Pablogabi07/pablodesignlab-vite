@@ -1,32 +1,52 @@
 import { useState } from "react";
 import SuccessMessage from "./SuccessMessage";
+import { sendEvent } from "../analytics";
 
 export default function Formulario({ servicio, paquete, onClose }) {
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // evita recarga o redirección
+    e.preventDefault();
 
     const form = e.target;
 
-    // Enviar usando FormSubmit manualmente
+    // Evento GA4: envío de formulario
+    sendEvent("formulario_enviado", {
+      servicio: servicio,
+      paquete: paquete,
+      origen: "formulario_consulta"
+    });
+
+    // Enviar usando FormSubmit
     fetch("https://formsubmit.co/pablodesignlab@gmail.com", {
       method: "POST",
       body: new FormData(form),
     })
       .then(() => {
-        setSuccess(true); // mostrar mensaje de éxito
+        setSuccess(true);
       })
       .catch(() => {
         alert("Hubo un error al enviar el formulario.");
       });
   };
 
+  const handleClose = () => {
+    // Evento GA4: abandono del formulario
+    sendEvent("formulario_cerrado", {
+      servicio: servicio,
+      paquete: paquete,
+      origen: "formulario_consulta",
+      accion: "cerrar_formulario"
+    });
+
+    onClose();
+  };
+
   return (
     <>
       <div className="form-overlay">
         <div className="form-box">
-          <button className="close-btn" onClick={onClose}>
+          <button className="close-btn" onClick={handleClose}>
             X
           </button>
 
@@ -52,7 +72,7 @@ export default function Formulario({ servicio, paquete, onClose }) {
         </div>
       </div>
 
-      {success && <SuccessMessage onClose={onClose} />}
+      {success && <SuccessMessage onClose={handleClose} />}
     </>
   );
 }

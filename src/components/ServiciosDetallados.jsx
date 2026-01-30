@@ -1,12 +1,11 @@
 import { useState } from "react";
 import Formulario from "./Formulario";
-
+import { sendEvent } from "../analytics";
 
 export default function ServiciosDetallados() {
   const [showForm, setShowForm] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
-  
   const paquetes = [
     {
       nombre: "Landing Page Profesional.",
@@ -18,7 +17,6 @@ export default function ServiciosDetallados() {
         "Integración con WhatsApp",
         "Animaciones suaves",
         "Optimización básica SEO",
-        /*"Entrega en 5–7 días",*/
       ],
     },
     {
@@ -32,7 +30,6 @@ export default function ServiciosDetallados() {
         "Optimización SEO inicial",
         "Integración con redes sociales",
         "Hosting + dominio (opcional)",
-        /*"Entrega en 10–15 días",*/
       ],
     },
     {
@@ -46,7 +43,6 @@ export default function ServiciosDetallados() {
         "SEO para productos",
         "Integración con WhatsApp",
         "Capacitación para usar la tienda",
-        /*"Entrega en 15–20 días",*/
       ],
     },
   ];
@@ -60,8 +56,6 @@ export default function ServiciosDetallados() {
           resultados reales para tu marca.
         </p>
       </div>
-
-            
 
       <div className="paquetes-grid">
         {paquetes.map((p, i) => (
@@ -78,6 +72,13 @@ export default function ServiciosDetallados() {
             <button
               className="btn-primary paquete-btn"
               onClick={() => {
+                // Evento GA4
+                sendEvent("click_formulario_paquete", {
+                  paquete: p.nombre,
+                  origen: "seccion_servicios",
+                  accion: "abrir_formulario",
+                });
+
                 setServicioSeleccionado(p.nombre);
                 setShowForm(true);
               }}
@@ -98,6 +99,13 @@ export default function ServiciosDetallados() {
         <button
           className="btn-primary"
           onClick={() => {
+            // Evento GA4 CTA general
+            sendEvent("click_formulario_paquete", {
+              paquete: "Consulta general",
+              origen: "cta_final_servicios",
+              accion: "abrir_formulario",
+            });
+
             setServicioSeleccionado("Consulta general");
             setShowForm(true);
           }}
