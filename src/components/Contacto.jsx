@@ -44,7 +44,8 @@ export default function Contacto() {
 
         {/* Email */}
         <a
-          href="mailto:tuemail@gmail.com"
+          href="pablodesignlab@gmail.com
+"
           className="contacto-card"
           onClick={() =>
             sendEvent("click_email", {
